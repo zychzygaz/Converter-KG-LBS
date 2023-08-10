@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Converter</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			body {
+				background-color: black;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+			}
+
+			div {
+				height: 50vh;
+				width: 100%;
+			}
+
+			.lbs {
+				border-top: 10px solid rgb(255, 255, 255);
+			}
+
+			input {
+				height: 100%;
+				width: 100%;
+				font-size: 122px;
+				text-align: center;
+				background-color: black;
+				color: wheat;
+				border: none;
+				outline: none;
+			}
+
+			input::placeholder {
+				color: rgb(197, 21, 21); /* You can set the color you want */
+			}
+		</style>
+	</head>
+	<body>
+		<div class="kg"><input type="text" placeholder="Kg" /></div>
+		<div class="lbs"><input type="text" placeholder="lbs" /></div>
+
+		<script>
+			const kg = document.querySelector(".kg > input");
+			const lbs = document.querySelector(".lbs > input");
+
+			kg.addEventListener("input", function () {
+				lbs.value = (kg.value * 2.2).toFixed(2);
+			});
+
+			lbs.addEventListener("input", function () {
+				kg.value = (lbs.value / 2.2).toFixed(2);
+			});
+		</script>
+	</body>
+</html>
